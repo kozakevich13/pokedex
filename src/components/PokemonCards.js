@@ -60,7 +60,11 @@ const PokemonCards = () => {
           </div>
         ))}
       </div>
-      {nextPageUrl && <button onClick={handleLoadMore}>Load More</button>}
+      {nextPageUrl && (
+        <button className="load-button" onClick={handleLoadMore}>
+          Load More
+        </button>
+      )}
     </div>
   );
 };
