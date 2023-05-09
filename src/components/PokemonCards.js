@@ -7,20 +7,6 @@ const PokemonCards = () => {
   const [pokemonList, setPokemonList] = useState([]);
   const [nextPageUrl, setNextPageUrl] = useState("");
   const [selectedPokemon, setSelectedPokemon] = useState(null);
-  const [test, setTest] = useState(null);
-
-  useEffect(() => {
-    axios
-      .get("https://pokeapi.co/api/v2/pokemon/4/")
-      .then((response) => {
-        setTest(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
-  console.log(test);
 
   useEffect(() => {
     axios
@@ -38,7 +24,13 @@ const PokemonCards = () => {
     axios
       .get(nextPageUrl)
       .then((response) => {
-        setPokemonList([...pokemonList, ...response.data.results]);
+        const newPokemonList = response.data.results.map((pokemon) => {
+          return {
+            ...pokemon,
+            type: "type goes here",
+          };
+        });
+        setPokemonList([...pokemonList, ...newPokemonList]);
         setNextPageUrl(response.data.next);
       })
       .catch((error) => {
@@ -46,12 +38,15 @@ const PokemonCards = () => {
       });
   };
 
+  console.log(pokemonList);
+
   const handleCardClick = (pokemon) => {
     setSelectedPokemon(pokemon);
   };
 
   return (
     <div>
+      <h1>Pokedex</h1>
       {selectedPokemon ? <PokemonDetails pokemon={selectedPokemon} /> : <> </>}
       <div className="pokemon-list">
         {pokemonList.map((pokemon) => (
