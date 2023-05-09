@@ -17,6 +17,8 @@ const PokemonDetails = ({ pokemon }) => {
       });
   }, [name]);
 
+  console.log(character);
+
   return (
     <div
       style={{
@@ -28,7 +30,6 @@ const PokemonDetails = ({ pokemon }) => {
         backgroundColor: "white",
         boxShadow: "0 0 10px rgba(0, 0, 0, 0.3)",
         padding: "1rem",
-        // zIndex: 9999, // set a higher z-index value
       }}
     >
       <h2>{name}</h2>
@@ -42,16 +43,37 @@ const PokemonDetails = ({ pokemon }) => {
                 <td>{character.types[0].type.name}</td>
               </tr>
               <tr>
-                <td>Weight</td>
-                <td>вага</td>
+                <td>Attack</td>
+                <td>{character.stats[1].base_stat}</td>
               </tr>
               <tr>
-                <td style={{ border: "1px solid black", padding: "0.5rem" }}>
-                  Type
-                </td>
-                {/* <td>{character.types[0].type.name}</td> */}
+                <td>Defense</td>
+                <td>{character.stats[2].base_stat}</td>
               </tr>
-              {/* Add additional rows for other attributes here */}
+              <tr>
+                <td>HP</td>
+                <td>{character.stats[0].base_stat}</td>
+              </tr>
+              <tr>
+                <td>SP Attack</td>
+                <td>{character.stats[3].base_stat}</td>
+              </tr>
+              <tr>
+                <td>SP Defense</td>
+                <td>{character.stats[4].base_stat}</td>
+              </tr>
+              <tr>
+                <td>Speed</td>
+                <td>{character.stats[5].base_stat}</td>
+              </tr>
+              <tr>
+                <td>Weight</td>
+                <td>{character.weight}</td>
+              </tr>
+              <tr>
+                <td>Total moves</td>
+                <td>{character.moves.length}</td>
+              </tr>
             </tbody>
           </table>
         </>
