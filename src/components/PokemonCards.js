@@ -46,7 +46,7 @@ const PokemonCards = () => {
 
   return (
     <div>
-      <h1>Pokedex</h1>
+      <h1 className="header-container">Pokedex</h1>
       {selectedPokemon ? <PokemonDetails pokemon={selectedPokemon} /> : <> </>}
       <div className="pokemon-list">
         {pokemonList.map((pokemon) => (

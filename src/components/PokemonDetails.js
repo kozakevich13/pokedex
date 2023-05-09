@@ -32,10 +32,10 @@ const PokemonDetails = ({ pokemon }) => {
         padding: "1rem",
       }}
     >
-      <h2>{name}</h2>
       {character ? (
         <>
           <img src={character.sprites.front_default} alt={name} />
+          <h2>{name}</h2>
           <table>
             <tbody>
               <tr>
