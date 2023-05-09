@@ -4,14 +4,12 @@ import axios from "axios";
 const Card = ({ pokemon, onClick }) => {
   const { name, url } = pokemon;
   const [pokemonDetails, setPokemonDetails] = useState(null);
-  const [pokemonType, setPokemonType] = useState("");
 
   useEffect(() => {
     axios
       .get(url)
       .then((response) => {
         setPokemonDetails(response.data);
-        setPokemonType(response.data.types[0].type.name);
       })
       .catch((error) => {
         console.log(error);
