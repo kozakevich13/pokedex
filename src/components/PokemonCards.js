@@ -56,17 +56,10 @@ const PokemonCards = () => {
 
   return (
     <div>
-      {selectedPokemon ? (
-        <PokemonDetails
-          pokemon={selectedPokemon}
-          onClose={handleDetailsClose}
-        />
-      ) : (
-        <> </>
-      )}
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
+      {selectedPokemon ? <PokemonDetails pokemon={selectedPokemon} /> : <> </>}
+      <div style={{ display: "flex", flexWrap: "wrap", width: "70%" }}>
         {pokemonList.map((pokemon) => (
-          <div key={pokemon.name} style={{ width: "33.33%", padding: "10px" }}>
+          <div key={pokemon.name} style={{ width: "20.33%", padding: "10px" }}>
             <Card pokemon={pokemon} onClick={() => handleCardClick(pokemon)} />
           </div>
         ))}
