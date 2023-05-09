@@ -50,16 +50,17 @@ const PokemonCards = () => {
     setSelectedPokemon(pokemon);
   };
 
-  const handleDetailsClose = () => {
-    setSelectedPokemon(null);
-  };
-
   return (
     <div>
       {selectedPokemon ? <PokemonDetails pokemon={selectedPokemon} /> : <> </>}
-      <div style={{ display: "flex", flexWrap: "wrap", width: "70%" }}>
+      <div className="pokemon-list">
         {pokemonList.map((pokemon) => (
-          <div key={pokemon.name} style={{ width: "20.33%", padding: "10px" }}>
+          <div
+            style={{
+              width: "20px",
+            }}
+            key={pokemon.name}
+          >
             <Card pokemon={pokemon} onClick={() => handleCardClick(pokemon)} />
           </div>
         ))}
