@@ -18,8 +18,6 @@ const Card = ({ pokemon, onClick }) => {
       });
   }, [url]);
 
-  console.log(pokemonType);
-
   return (
     <div className="card" onClick={onClick}>
       <div className="card-image">
