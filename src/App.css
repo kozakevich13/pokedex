@@ -77,3 +77,42 @@ tr:nth-child(odd) td {
 tr:hover td {
   background-color: #ddd;
 }
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 220px;
+}
+
+.card:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.card-image {
+  height: 160px;
+  overflow: hidden;
+}
+
+.card-image img {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-name {
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  text-transform: capitalize;
+}
