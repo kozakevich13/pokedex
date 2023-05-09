@@ -128,3 +128,53 @@ tr:hover td {
   width: 70%;
   max-width: 1200px;
 }
+
+.type-container {
+  display: flex;
+}
+.pokemon-type {
+  width: 80px;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin: 5px;
+}
+
+.card-fire {
+  background-color: red;
+}
+
+.card-grass {
+  background-color: green;
+}
+
+.card-poison {
+  background-color: purple;
+}
+
+.card-electric {
+  background-color: orange;
+}
+
+.card-water {
+  background-color: blue;
+}
+
+.card-flying {
+  background-color: #00bfff;
+}
+
+.card-bug {
+  background-color: sienna;
+}
+
+.card-normal {
+  background-color: skyblue;
+}
+
+.card-ground {
+  background-color: grey;
+}
+
+.card-fairy {
+  background-color: fuchsia;
+}
